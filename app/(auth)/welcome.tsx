@@ -17,9 +17,9 @@ const onBoarding = () => {
   const [activeIndex, setActiveIndex] = useState(0);
   const isLastIndex = activeIndex === onBoardingContent.length - 1;
   return (
-    <SafeAreaView className="flex justify-between h-full items-center bg-white">
+    <SafeAreaView className="flex justify-between w-full h-full items-center bg-white">
       <TouchableOpacity
-        className="flex w-full justify-end items-end p-5"
+        className="flex w-full justify-end items-end p-5 mt-16 mb-8"
         onPress={() => {
           router.replace("/(auth)/sign-up");
         }}
@@ -38,6 +38,7 @@ const onBoarding = () => {
         onIndexChanged={(index) => {
           setActiveIndex(index);
         }}
+        className=""
       >
         {onBoardingContent.map((item) => (
           <View
@@ -73,7 +74,7 @@ const onBoarding = () => {
             ? router.replace("/(auth)/sign-up")
             : swiperRef.current?.scrollBy(1);
         }}
-        className="w-11/12"
+        className="w-[90%] h-16 mb-10 mt-8 text-white"
       />
     </SafeAreaView>
   );
